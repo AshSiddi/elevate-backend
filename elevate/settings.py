@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-*ab&3yztc^a!!5(38mib(xf=y1&u4z707bd3#5&$qk=1rm5_^+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['elevateAPI.pythonanywhere.com', '127.0.0.1']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'djoser',
     'accounts',
+    'corsheaders'
 ]
 
 MIDDLEWARE = [
@@ -51,6 +52,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'elevate.urls'
@@ -160,3 +162,6 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'muhammadashar4598@gmail.com'
 EMAIL_HOST_PASSWORD = 'yegb neao hpfg ypmj'  # NOT your Gmail password
 DEFAULT_FROM_EMAIL = 'Elevate Team <muhammadashar4598@gmail.com>'
+
+CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_CREDENTIALS = True
