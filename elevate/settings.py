@@ -43,6 +43,10 @@ INSTALLED_APPS = [
     'accounts',
     'notes',
     'events',
+    'content',
+    'user_progress',
+    'user_extras',
+    'platform_specifics',
     'corsheaders'
 ]
 
@@ -141,6 +145,9 @@ AUTH_USER_MODEL = 'accounts.User'
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework.authentication.TokenAuthentication',
+    ],
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',  # Enforce auth globally
     ],
 }
 
